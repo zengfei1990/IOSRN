@@ -1,0 +1,24 @@
+{
+  "name": "ios-rn-native-demo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "react-native start",
+    "bundle:ios": "react-native bundle --entry-file index.js --platform ios --dev false --bundle-output iOSRN/main.jsbundle --assets-dest iOSRN"
+  },
+  "dependencies": {
+    "react": "19.2.3",
+    "react-native": "0.85.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/runtime": "^7.25.0",
+    "@react-native-community/cli": "20.1.0",
+    "@react-native-community/cli-platform-ios": "20.1.0",
+    "@react-native/babel-preset": "0.85.1",
+    "@react-native/metro-config": "0.85.1"
+  },
+  "engines": {
+    "node": ">=22.11.0"
+  }
+}

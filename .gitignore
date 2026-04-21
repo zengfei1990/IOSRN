@@ -1,0 +1,10 @@
+node_modules/
+.npm-cache/
+Pods/
+build/
+DerivedData/
+.xcode.env.local
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+npm-debug.log*
+yarn-error.log*
