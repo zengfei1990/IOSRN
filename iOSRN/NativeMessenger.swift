@@ -18,6 +18,7 @@ final class NativeMessenger: NSObject {
 
     @objc(showMessage:)
     func showMessage(_ message: String) {
+        // RN 调到原生模块时不一定在主线程，因此这里统一切回主线程更新 UI。
         DispatchQueue.main.async {
             guard let viewController = Self.topViewController() else {
                 return
@@ -34,6 +35,7 @@ final class NativeMessenger: NSObject {
     }
 
     private static func topViewController() -> UIViewController? {
+        // 找到当前前台窗口里的顶层控制器，用来安全地弹出原生 Alert。
         let scene = UIApplication.shared.connectedScenes
             .compactMap { $0 as? UIWindowScene }
             .first { $0.activationState == .foregroundActive }

@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     }
 
     private func buildDemoUI() {
+        // 这个页面完全是原生 UIKit，作用是作为宿主去打开 RN 页面。
         let titleLabel = UILabel()
         titleLabel.text = "Native iOS Host"
         titleLabel.font = .systemFont(ofSize: 30, weight: .bold)
@@ -64,6 +65,7 @@ class ViewController: UIViewController {
     }
 
     @objc private func openReactNative() {
+        // 用导航控制器包一层 RN 页面，方便演示原生导航栏按钮和关闭操作。
         let reactViewController = ReactViewController()
         let navigationController = UINavigationController(rootViewController: reactViewController)
         navigationController.modalPresentationStyle = .fullScreen
